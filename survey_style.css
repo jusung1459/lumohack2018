@@ -47,7 +47,7 @@ button {
   transition:background-color 1s ease-in;
 }
 
-#submit:hover{
+.submit:hover{
   background-color: #666666;
   border: solid 4px white;
   color: white;
