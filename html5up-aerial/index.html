@@ -5,64 +5,69 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Lumohacks 2018</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
 
-				<!-- Header -->
+<head>
+	<title>Lumohacks 2018</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+</head>
 
-					<header id="header">
-						<h1>Service AccessMent</h1>
-						<p><span style="font-weight:bold">Unlock your mental health care professional</span></p>
+<body class="is-preload">
+	<div id="wrapper">
+		<div id="bg"></div>
+		<div id="overlay"></div>
+		<div id="main">
 
-						<div class="popup" onclick="myFunction()"><span class="info-button">Click for Information!</span>
-							<span class="popuptext" id="myPopup">
-								Service AccessMent is a simple and easy to use web application to patients navigate the often
-								opaque and complicated mental health support framework in Vancouver. Click Get Started and
-								enter your address to find the nearby <span class="green">family doctors</span>, <span class="red">psychiatrists</span>, <span class="purple">clinical psychologists</span>, and
-								<span class="blue">mental health facilities</span>.<br><br>
+			<!-- Header -->
 
-								Your family doctor—can rule out any other causes for your symptoms, prescribe medications,
-								do limited counselling and refer you to a psychiatrist or other special services.<br><br>
+			<header id="header">
+				<h1>Service AccessMent</h1>
+				<p><span style="font-weight:bold">Unlock your mental health care professional</span></p>
 
-								Psychiatrists—are doctors specially trained in diagnosing and treating mental illnesses. They are
-								covered under BC’s Medical Services Plan (MSP), but you will need a referral from your family
-								doctor or mental health program to see one.<br><br>
+				<div class="popup" onclick="myFunction()"><span class="info-button">Click for Information!</span>
+					<span class="popuptext" id="myPopup">
+						Service AccessMent is a simple and easy to use web application to patients navigate the often
+						opaque and complicated mental health support framework in Vancouver. Click Get Started and
+						enter your address to find the nearby <span class="green">family doctors</span>, <span class="red">psychiatrists</span>,
+						<span class="purple">clinical psychologists</span>, and
+						<span class="blue">mental health facilities</span>.<br><br>
 
-								Counsellors—include psychologists, clinical counselors, and social workers. These professionals
-								can help diagnose mental illnesses and provide counselling that can look at your thoughts,
-								feelings and behaviours and are not covered by BC’s Medical Services Plan (MSP). <br>
-							</span>
-						</div>
+						Your family doctor—can rule out any other causes for your symptoms, prescribe medications,
+						do limited counselling and refer you to a psychiatrist or other special services.<br><br>
 
-						<nav>
-							<ul>
-								<a href="../maps.html"><button class="start">Get Started</button></a>
-							</ul>
-						</nav>
-					</header>
+						Psychiatrists—are doctors specially trained in diagnosing and treating mental illnesses. They are
+						covered under BC’s Medical Services Plan (MSP), but you will need a referral from your family
+						doctor or mental health program to see one.<br><br>
 
-			</div>
+						Counsellors—include psychologists, clinical counselors, and social workers. These professionals
+						can help diagnose mental illnesses and provide counselling that can look at your thoughts,
+						feelings and behaviours and are not covered by BC’s Medical Services Plan (MSP). <br>
+					</span>
+				</div>
+
+				<nav>
+					<ul>
+						<a href="../survey.html"><button class="start">Get Started</button></a>
+					</ul>
+				</nav>
+			</header>
+
 		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
+	</div>
+	<script>
+		window.onload = function () { document.body.classList.remove('is-preload'); }
+		window.ontouchmove = function () { return false; }
+		window.onorientationchange = function () { document.body.scrollTop = 0; }
 
-			// When the user clicks on <div>, open the popup
-			function myFunction() {
-			    var popup = document.getElementById("myPopup");
-			    popup.classList.toggle("show");
-			}
-		</script>
-	</body>
+		// When the user clicks on <div>, open the popup
+		function myFunction() {
+			var popup = document.getElementById("myPopup");
+			popup.classList.toggle("show");
+		}
+	</script>
+</body>
+
 </html>
