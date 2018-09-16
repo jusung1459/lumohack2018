@@ -1033,12 +1033,12 @@ input, select, textarea {
 	.popup .popuptext {
 	    visibility: hidden;
 			text-align: justify;
+			line-height: 130%;
 	    width: 1000px;
 	    background-color: #555;
 	    color: #fff;
-	    text-align: center;
 	    border-radius: 6px;
-	    padding: 8px 0;
+	    padding: 8px 10px;
 	    position: absolute;
 	    z-index: 1;
 	    bottom: 125%;
