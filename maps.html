@@ -237,6 +237,15 @@
 					}
           markers = [];
 
+
+					var location = places[0].geometry.location;
+					var lat = location.lat();
+					var lng = location.lng();
+					myLocation = {lat: lat, lng: lng}
+					console.log(myLocation)
+
+					markerCircle.setCenter(myLocation);
+
           // For each place, get the icon, name and location.
 		      var bounds = new google.maps.LatLngBounds();
 
