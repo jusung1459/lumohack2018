@@ -185,21 +185,6 @@ input, select, textarea {
 /* BG */
 
 	#bg {
-		/*-moz-animation: bg 60s linear infinite;
-		-webkit-animation: bg 60s linear infinite;
-		-ms-animation: bg 60s linear infinite;
-		animation: bg 60s linear infinite;
-		-moz-backface-visibility: hidden;
-		-webkit-backface-visibility: hidden;
-		-ms-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-moz-transform: translate3d(0,0,0);
-		-webkit-transform: translate3d(0,0,0);
-		-ms-transform: translate3d(0,0,0);
-		transform: translate3d(0,0,0);*/
-	/* Set your background with this */
-
-		/*background: #348cb2 url(https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg) no-repeat bottom left;*/
 		background: url(https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg) no-repeat 50% 50%;
 		display: table;
 		margin: auto;
@@ -635,9 +620,9 @@ input, select, textarea {
 				.start{
 					background-color: white;
 					border: none;
-					border: solid 4px #505050;
+					border: solid 4px #666666;
 					font-size: 180%;
-					color: #505050;
+					color: #666666;
 					font-family: 'Arial Black';
 
 					-webkit-transition:color 1s ease-in;
@@ -664,7 +649,7 @@ input, select, textarea {
 				}
 
 				.start:hover{
-					background-color: #505050;
+					background-color: #666666;
 					border: solid 4px white;
 					color: white;
 				}
