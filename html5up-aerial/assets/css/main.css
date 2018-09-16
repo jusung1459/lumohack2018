@@ -199,13 +199,15 @@ input, select, textarea {
 		transform: translate3d(0,0,0);*/
 	/* Set your background with this */
 
-		background: #348cb2 url("images/newbg.jpg") bottom left;
-		background-repeat: repeat-x;
+		/*background: #348cb2 url(https://images.pexels.com/photos/807598/pexels-photo-807598.jpeg) no-repeat bottom left;*/
+		background: url(https://images.pexels.com/photos/747964/pexels-photo-747964.jpeg) no-repeat 50% 50%;
+		display: table;
+		margin: auto;
 		height: 100%;
-		left: 0;
+		width: 100%;
 		opacity: 1;
-		position: fixed;
 		top: 0;
+		background-size: cover;
 	}
 
 	@-moz-keyframes bg {
@@ -270,11 +272,6 @@ input, select, textarea {
 			-ms-transform: translate3d(-2250px,0,0);
 			transform: translate3d(-2250px,0,0);
 		}
-	}
-
-	#bg {
-		background-size: 2250px auto;
-		width: 6750px;
 	}
 
 /* Overlay */
@@ -536,7 +533,7 @@ input, select, textarea {
 		#header p {
 			font-size: 1.25em;
 			margin: 0.75em 0 0.25em 0;
-			opacity: 0.75;
+			opacity: 1;
 		}
 
 		#header nav {
@@ -639,8 +636,9 @@ input, select, textarea {
 					background-color: white;
 					border: none;
 					border: solid 4px #505050;
-					font-size: 150%;
+					font-size: 180%;
 					color: #505050;
+					font-family: 'Arial Black';
 
 					-webkit-transition:color 1s ease-in;
 				  -moz-transition:color 1s ease-in;
@@ -652,13 +650,13 @@ input, select, textarea {
 				  -o-transition:background-color 1s ease-in;
 				  transition:background-color 1s ease-in;
 
-					padding: 30px;
-					/*font: inherit;*/
-					/*width: 80px;*/
+					padding: 25px;
+					font-size: 20px;
+
 					text-align: center;
 					text-decoration: none;
 					display: inline-block;
-					border-radius: 10px;
+					border-radius: 15px;
 					background-repeat:no-repeat;
 			    cursor:pointer;
 			    overflow: hidden;
@@ -764,11 +762,7 @@ input, select, textarea {
 				transform: translate3d(-1500px,0,0);
 			}
 		}
-
-		#bg {
-			background-size: 1500px auto;
-			width: 4500px;
-		} }
+	}
 
 /* Normal */
 
@@ -846,11 +840,7 @@ input, select, textarea {
 				transform: translate3d(-750px,0,0);
 			}
 		}
-
-		#bg {
-			background-size: 750px auto;
-			width: 2250px;
-		} }
+	}
 
 /* Mobile */
 
@@ -931,11 +921,6 @@ input, select, textarea {
 				-ms-transform: translate3d(-300px,0,0);
 				transform: translate3d(-300px,0,0);
 			}
-		}
-
-		#bg {
-			background-size: 300px auto;
-			width: 900px;
 		}
 
 	/* Header */
@@ -1031,13 +1016,62 @@ input, select, textarea {
 			}
 		}
 
-		#bg {
-			background-size: 412.5px auto;
-			width: 1237.5px;
-		}
-
 	/* Header */
 
 		#header nav {
 			padding: 0 1em;
 		} }
+
+		/* Popup container */
+	.popup {
+	    position: relative;
+	    display: inline-block;
+	    cursor: pointer;
+	}
+
+	/* The actual popup (appears on top) */
+	.popup .popuptext {
+	    visibility: hidden;
+			text-align: justify;
+	    width: 1000px;
+	    background-color: #555;
+	    color: #fff;
+	    text-align: center;
+	    border-radius: 6px;
+	    padding: 8px 0;
+	    position: absolute;
+	    z-index: 1;
+	    bottom: 125%;
+	    left: 50%;
+	    margin-left: -500px;
+	}
+
+	/* Popup arrow */
+	.popup .popuptext::after {
+	    content: "";
+	    position: absolute;
+	    top: 100%;
+	    left: 40%;
+	    margin-left: -5px;
+	    border-width: 5px;
+	    border-style: solid;
+	    border-color: #555 transparent transparent transparent;
+	}
+
+	/* Toggle this class when clicking on the popup container (hide and show the popup) */
+	.popup .show {
+	    visibility: visible;
+	    -webkit-animation: fadeIn 1s;
+	    animation: fadeIn 1s
+	}
+
+	/* Add animation (fade in the popup) */
+	@-webkit-keyframes fadeIn {
+	    from {opacity: 0;}
+	    to {opacity: 1;}
+	}
+
+	@keyframes fadeIn {
+	    from {opacity: 0;}
+	    to {opacity:1 ;}
+	}

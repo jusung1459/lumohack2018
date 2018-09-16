@@ -15,7 +15,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 100%;
+        height: 90%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -93,6 +93,17 @@
       #target {
         width: 345px;
       }
+			.back{
+				background-color: white;
+				border: none;
+				font-size: 150%;
+				color: #505050;
+				border-radius: 10px;
+				padding: 20px;
+				text-align: center;
+				text-decoration: none;
+				display: inline-block;
+			}
     </style>
 
 
@@ -100,6 +111,7 @@
 <body>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
+		<a href="html5up-aerial/index.html"><button class="back">Back</button></a>
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
       // feature. People can enter geographical searches. The search box will return a
@@ -124,7 +136,7 @@
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
         var dummy = 50;
-        
+
 
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
@@ -142,10 +154,10 @@
             	map: map,
             	center: myLocation,
 
-              //FIGURE OUT HOW TO MAKE 50 KM CIRCLE 
+              //FIGURE OUT HOW TO MAKE 50 KM CIRCLE
             	radius: circleRadius
 			  });
-			 
+
 		var service = new google.maps.places.PlacesService(map);
             service.nearbySearch({
                 location : myLocation,
@@ -227,8 +239,8 @@
               title: place.name,
               position: place.geometry.location
 			}));
-			
-			
+
+
 
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
