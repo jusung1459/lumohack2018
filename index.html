@@ -9,12 +9,86 @@
 	<link rel="stylesheet" href="style.css" />
 	<script src="script.js"></script>
 	<title>Lumo hacks</title>
+
+	<style>
+		#map { 
+			height:400px;
+			width:100%;
+		}
+	</style>
 </head>
 <body>
-	<div id="section-one">
-		<a class="button" href="#contact">Contact me</a>
-	</div>
-	<div id="section-two">
-	</div>
+	<!-- just an empty dev; google map -->
+	<div id="map"></div>
+	<!--function init map-->
+	<script>
+		function initMap() {
+			//Map options
+			var options = {
+				zoom: 8,
+				center:{lat:49.2827, lng:-123.1207}
+			}
+			
+			//new map
+			var map = new google.maps.Map(document.getElementById('map'), options);
+/*
+			//adding marker
+			var marker = new google.maps.Marker({
+				position:{lat:49.2827, lng:-123.1207},
+				map:map,
+				//icon:'the-link-to-the-icon IF YOU WANT TO'
+				
+			});
+
+			//the info window when you click on the marker; doesn't work w free account CHECK IF IT WORKS LATER
+			var infoWindow = new google.maps.InfoWindow({
+				content: '<h1>HELLO</h1>'
+			});
+			marker.addListener('click', function(){
+				infoWindow.open(map, marker);
+			}); */
+
+
+			addMarker({
+				coords:{lat:49.2827, lng:-123.1207},
+				iconImage: "icons/Addressblue.png",
+				content:'<h1>Vancouver</h1>'
+				});
+			addMarker({coords:{lat:49.2827, lng:-123.3207}});
+
+
+			//function that adds a marker
+			function addMarker(props) {
+				var marker = new google.maps.Marker({
+				position:props.coords,
+				map:map,
+				//icon:props.iconImage
+				
+			});
+
+			//check if we have an icon
+			if(props.iconImage) {
+				//set icon image
+				marker.setIcon(props.iconImage);
+			}
+
+			//check if content is available
+			if(props.content) {
+				var infoWindow = new google.maps.InfoWindow({
+				content:props.content
+			});
+			marker.addListener('click', function(){
+				infoWindow.open(map, marker);
+			});
+			}
+			}
+		}
+
+
+	</script>
+	<!--init maps w api-->
+	<script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxwr94rNb_pmkPO9FOop0c1YOERrUdmiQ&callback=initMap">
+    </script>
 </body>
 </html>
