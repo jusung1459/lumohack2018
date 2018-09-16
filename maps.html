@@ -214,6 +214,7 @@
 
       /* I think the problem is here :( ) */
       function createMarker(place) {
+        var infowindow = new google.maps.InfoWindow();
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
@@ -222,10 +223,15 @@
         markers.push(marker);
 
         google.maps.event.addListener(marker, 'click', function () {
-          infowindow.setContent(place.name);
+          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+            'Occupation: ' + "psyc" + '<br>' +
+            "Taking clients:" + '<br>' +
+            "Rating: " + '<br>' +
+            "Coverage: " + '</div >');
           infowindow.open(map, this);
         });
       }
+
 
       var markers = [];
       // Listen for the event fired when the user selects a prediction and retrieve
@@ -277,6 +283,7 @@
           type: ['hospital'],
         }, callback);
 
+        //create marker
         function callback(results, status) {
           if (status === google.maps.places.PlacesServiceStatus.OK) {
             for (var i = 0; i < results.length; i++) {
@@ -317,11 +324,11 @@
             bounds.extend(place.geometry.location);
           }
         });
-        map.fitBounds(bounds);
       });
     }
 
   </script>
+  <script src="https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJN1t_tDeuEmsRUsoyG83frY4&fields=name,rating,formatted_phone_number&key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U&libraries=places&callback=initAutocomplete"
     async defer></script>
 </body>
