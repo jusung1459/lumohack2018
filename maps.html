@@ -98,7 +98,6 @@
 				background-color: white;
 				border: none;
 				font-size: 150%;
-<<<<<<< Updated upstream
 				color: #505050;
 				padding: 20px;
 				text-align: center;
@@ -108,42 +107,18 @@
         transition: 0.3s;
 
       }
-
+      
       .back:hover {
           background-color: #505050;
 					/*border: solid 4px white;*/
 					color: white;
       }
-=======
-				color: #666666;
-				padding: 20px;
-				text-align: center;
-				text-decoration: none;
-				display: inline-block;
-
-				-webkit-transition:color 1s ease-in;
-				-moz-transition:color 1s ease-in;
-				-o-transition:color 1s ease-in;
-				transition:color 1s ease-in;
-
-				-webkit-transition:background-color 1s ease-in;
-				-moz-transition:background-color 1s ease-in;
-				-o-transition:background-color 1s ease-in;
-				transition:background-color 1s ease-in;
-			}
-
-			.back:hover{
-				background-color: #666666;
-				color: white;
-			}
->>>>>>> Stashed changes
     </style>
 
 
 </head>
 
 <body>
-<<<<<<< Updated upstream
   <input id="pac-input" class="controls" type="text" placeholder="Search Box">
   <div id="map"></div>
   <a href="html5up-aerial/index.html"><button class="back">Back</button></a>
@@ -158,23 +133,6 @@
     var myLocation = { lat: 49.2827, lng: -123.1207 }
 
     //defining the latitude/longtitude
-=======
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-		<a href="html5up-aerial/index.html"><button class="back">Back</button></a>
-    <script>
-      // This example adds a search box to a map, using the Google Place Autocomplete
-      // feature. People can enter geographical searches. The search box will return a
-      // pick list containing a mix of places and predicted search terms.
-
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-	  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-	  var myLocation = {lat: 49.2827, lng: -123.1207}
-<<<<<<< Updated upstream
-
-		//defining the latitude/longtitude
->>>>>>> Stashed changes
 		/*function GetLatlong()
     {
         var geocoder = new google.maps.Geocoder();
@@ -190,7 +148,6 @@
         });
 		}*/
 
-<<<<<<< Updated upstream
     console.log("Hello");
     console.log(myLocation);
 
@@ -263,44 +220,6 @@
           position: place.geometry.location
         });
         markers.push(marker);
-=======
-		console.log("Hello");
-		console.log(myLocation);
-=======
->>>>>>> Stashed changes
-
-		var map;
-	         function initialize() {
-	             var myLatlng = new google.maps.LatLng(49.2827,-123.1207);
-	             var myOptions = {
-	                 zoom:7,
-	                 center: myLatlng,
-	                 mapTypeId: google.maps.MapTypeId.ROADMAP
-	             }
-	             map = new google.maps.Map(document.getElementById("gmap"), myOptions);
-	             // marker refers to a global variable
-	             marker = new google.maps.Marker({
-	                 position: myLatlng,
-	                 map: map
-	             });
-
-	             google.maps.event.addListener(map, "click", function(event) {
-	                 // get lat/lon of click
-	                 var clickLat = event.latLng.lat();
-	                 var clickLon = event.latLng.lng();
-
-	                 // show in input box
-	                 document.getElementById("lat").value = clickLat.toFixed(5);
-	                 document.getElementById("lon").value = clickLon.toFixed(5);
-
-	                   var marker = new google.maps.Marker({
-	                         position: new google.maps.LatLng(clickLat,clickLon),
-	                         map: map
-	                      });
-	             });
-	     }
-
->>>>>>> Stashed changes
 
         google.maps.event.addListener(marker, 'click', function () {
           infowindow.setContent(place.name);
@@ -398,7 +317,6 @@
             bounds.extend(place.geometry.location);
           }
         });
-<<<<<<< Updated upstream
         map.fitBounds(bounds);
       });
     }
@@ -407,13 +325,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U&libraries=places&callback=initAutocomplete"
     async defer></script>
 </body>
-=======
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U&libraries=places&callback=initMap"
-         async defer></script>
-  </body>
->>>>>>> Stashed changes
 </head>
 
 </html>
