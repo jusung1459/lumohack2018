@@ -1079,3 +1079,23 @@ input, select, textarea {
 	    from {opacity: 0;}
 	    to {opacity:1 ;}
 	}
+
+	.green{
+		color: #33cc33;
+	}
+
+	.red{
+		color: #ff3300;
+	}
+
+	.purple{
+		color: #d24dff;
+	}
+
+	.blue{
+		color: #0066ff;
+	}
+
+	.info-button{
+		font-family: 'arial black';
+	}
