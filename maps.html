@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="style.css" />
 	<script src="script.js"></script>
 	<script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U&libraries=places"></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U&libraries=places"></script>-->
 	<title>Lumo hacks</title>
 	<style>
       /* Always set the map height explicitly to define the size of the div
@@ -121,7 +121,25 @@
       // parameter when you first load the API. For example:
 	  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 	  var myLocation = {lat: 49.2827, lng: -123.1207}
-	  myLocation = {lat: places.geometry.location.lat, lng:places.geometry.location.lng}
+
+		//defining the latitude/longtitude
+		/*function GetLatlong()
+    {
+        var geocoder = new google.maps.Geocoder();
+        var address = document.getElementById('textboxid').value;
+
+        geocoder.geocode({ 'address': address }, function (results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+                var latitude = results[0].geometry.location.lat();
+                var longitude = results[0].geometry.location.lng();
+								myLocation = {lat: latitude, lng: longitude}
+            }
+        });
+		}*/
+
+		console.log("Hello");
+		console.log(myLocation);
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -135,14 +153,11 @@
         var searchBox = new google.maps.places.SearchBox(input);
         map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-        var dummy = 50;
-
-
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
 		});
-        
+
         var circleRadius = 500;
 
         var markerCircle = new google.maps.Circle({
@@ -164,21 +179,21 @@
                 radius : circleRadius,
 				type : [ 'doctor'],
 			}, callback);
-		
+
 		var service1 = new google.maps.places.PlacesService(map);
             service1.nearbySearch({
                 location : myLocation,
                 radius : circleRadius,
 				type : [ 'church'],
 			}, callback);
-		
+
 		var service2 = new google.maps.places.PlacesService(map);
             service2.nearbySearch({
                 location : myLocation,
                 radius : circleRadius,
 				type : [ 'hospital'],
 			}, callback);
-			
+
 		function callback(results, status) {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
                 for (var i = 0; i < results.length; i++) {
@@ -187,12 +202,14 @@
             }
         }
 
+/* I think the problem is here :( ) */
 	function createMarker(place) {
             var placeLoc = place.geometry.location;
             var marker = new google.maps.Marker({
                 map : map,
                 position : place.geometry.location
             });
+						markers.push(marker);
 
             google.maps.event.addListener(marker, 'click', function() {
                 infowindow.setContent(place.name);
@@ -205,19 +222,23 @@
         // more details for that place.
         searchBox.addListener('places_changed', function() {
           var places = searchBox.getPlaces();
-
           if (places.length == 0) {
             return;
           }
 
           // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
+          	/*markers.forEach(function(marker) {
+            markers.setMap(null);
+
+						console.log("Inside the search box" + myLocation);
+          });*/
+					for (var i = 0; i < markers.length; i++) {
+						markers[i].setMap(null);
+					}
           markers = [];
 
           // For each place, get the icon, name and location.
-		  var bounds = new google.maps.LatLngBounds();
+		      var bounds = new google.maps.LatLngBounds();
 
           places.forEach(function(place) {
             if (!place.geometry) {
@@ -241,7 +262,6 @@
 			}));
 
 
-
             if (place.geometry.viewport) {
               // Only geocodes have viewport.
               bounds.union(place.geometry.viewport);
@@ -257,4 +277,5 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjiBOs5ViFB5VnYT2Ohjge7pfvK97TM6U&libraries=places&callback=initAutocomplete"
          async defer></script>
   </body>
+</head>
 </html>
