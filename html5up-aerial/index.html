@@ -23,10 +23,20 @@
 					<header id="header">
 						<h1>Service AccessMent</h1>
 						<p><span style="font-weight:bold">Unlock your mental health care professional</span></p>
+
+						<div class="popup" onclick="myFunction()">Information!
+							<span class="popuptext" id="myPopup">
+								Service AccessMent is a simple and easy to use web application to patients navigate the often <br/>
+								opaque and complicated mental health support framework in Vancouver. Click Get Started and  <br/>
+								enter your address to find the nearby family doctors, psychiatrists, clinical psychologists, and <br/>
+								mental health facilities. 
+							</span>
+						</div>
+
 						<nav>
 							<ul>
-								<!--<li><a href="#" class="start"><span class="label">Get Started</span></a></li>-->
 								<a href="../maps.html"><button class="start">Get Started</button></a>
+
 							</ul>
 						</nav>
 					</header>
@@ -37,6 +47,12 @@
 			window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
+
+			// When the user clicks on <div>, open the popup
+			function myFunction() {
+			    var popup = document.getElementById("myPopup");
+			    popup.classList.toggle("show");
+			}
 		</script>
 	</body>
 </html>
