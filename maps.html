@@ -107,11 +107,12 @@
 
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+	  // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+	  var myLocation = {lat: 49.2827, lng: -123.1207}
 
       function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 49.2827, lng: -123.1207},
+          center: myLocation,
           zoom: 14,
           mapTypeId: 'roadmap'
         });
@@ -138,11 +139,39 @@
             	fillColor: '#FF0000',
             	fillOpacity: 0.35,
             	map: map,
-            	center: {lat: 49.2827, lng: -123.1207},
+            	center: myLocation,
 
               //FIGURE OUT HOW TO MAKE 50 KM CIRCLE 
             	radius: circleRadius
-          	});
+			  });
+			 
+		var service = new google.maps.places.PlacesService(map);
+            service.nearbySearch({
+                location : myLocation,
+                radius : circleRadius,
+                type : [ 'restaurant' ]
+			}, callback);
+			
+		function callback(results, status) {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                }
+            }
+        }
+
+function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+                map : map,
+                position : place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(place.name);
+                infowindow.open(map, this);
+            });
+        }
 
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
