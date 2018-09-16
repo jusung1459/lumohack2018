@@ -125,6 +125,8 @@
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
         });
+        
+        var circleRadius = 500;
 
         var markerCircle = new google.maps.Circle({
             	strokeColor: '#FF0000',
@@ -136,7 +138,7 @@
             	center: {lat: 49.2827, lng: -123.1207},
 
               //FIGURE OUT HOW TO MAKE 50 KM CIRCLE 
-            	radius: 500
+            	radius: circleRadius
           	});
 
         var markers = [];
