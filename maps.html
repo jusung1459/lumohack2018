@@ -93,16 +93,25 @@
       #target {
         width: 345px;
       }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 			.back{
 				background-color: white;
 				border: none;
 				font-size: 150%;
+<<<<<<< Updated upstream
 				color: #505050;
 				border-radius: 10px;
 				padding: 20px;
 				text-align: center;
 				text-decoration: none;
 				display: inline-block;
+=======
+				color: black;
+				border-radius: 5px;
+>>>>>>> Stashed changes
 			}
     </style>
 
@@ -111,7 +120,11 @@
 <body>
     <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
+<<<<<<< Updated upstream
 		<a href="html5up-aerial/index.html"><button class="back">Back</button></a>
+=======
+		<a href="/html5up-aerial/index.html"><button class="back">Back</button></a>
+>>>>>>> Stashed changes
     <script>
       // This example adds a search box to a map, using the Google Place Autocomplete
       // feature. People can enter geographical searches. The search box will return a
@@ -141,8 +154,13 @@
         // Bias the SearchBox results towards current map's viewport.
         map.addListener('bounds_changed', function() {
           searchBox.setBounds(map.getBounds());
+<<<<<<< Updated upstream
 		});
         
+=======
+        });
+
+>>>>>>> Stashed changes
         var circleRadius = 500;
 
         var markerCircle = new google.maps.Circle({
@@ -154,6 +172,7 @@
             	map: map,
             	center: myLocation,
 
+<<<<<<< Updated upstream
               //FIGURE OUT HOW TO MAKE 50 KM CIRCLE
             	radius: circleRadius
 			  });
@@ -199,6 +218,16 @@
                 infowindow.open(map, this);
             });
         }
+=======
+<<<<<<< Updated upstream
+              //FIGURE OUT HOW TO MAKE 50 KM CIRCLE
+            	radius: circleRadius
+=======
+              //FIGURE OUT HOW TO MAKE 50 KM CIRCLE
+            	radius: 500
+>>>>>>> Stashed changes
+          	});
+>>>>>>> Stashed changes
 
         var markers = [];
         // Listen for the event fired when the user selects a prediction and retrieve
